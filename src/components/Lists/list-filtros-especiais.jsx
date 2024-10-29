@@ -3,9 +3,9 @@ import { CardFiltro } from "../Cards/card-filto-especial";
 export function ListFiltros() {
   return (
     <>
-      <div className="container my-5">
+      <div className="p-4 my-5 w-full overflow-x-visible">
         <h4 className="font-medium text-base mb-[15px]">Sugestões de filtros</h4>
-        <div className=" flex justify-between items-center gap-3">
+        <div className="flex gap-3 overflow-x-scroll  [&::-webkit-scrollbar]:hidden">
           <CardFiltro></CardFiltro>
           <CardFiltro></CardFiltro>
           <CardFiltro></CardFiltro>

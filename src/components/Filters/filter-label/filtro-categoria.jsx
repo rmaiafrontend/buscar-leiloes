@@ -1,14 +1,23 @@
+import { useState } from "react";
+
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
-export function FiltroCategoria() {
+export function FiltroCategoria({ setCategoriaSelecionada, categoriaSelecionada }) {
   return (
     <>
-      <h4 className="mb-5 font-medium">Filtre por categoria</h4>
-      <ToggleGroup type="single">
-        <ToggleGroupItem value="a">Todos</ToggleGroupItem>
-        <ToggleGroupItem value="b">Casa</ToggleGroupItem>
-        <ToggleGroupItem value="c">Apartamento</ToggleGroupItem>
-        <ToggleGroupItem value="d">Comercial</ToggleGroupItem>
+      <h4 className="mb-5 font-medium max-sm:mb-0">Filtre por categoria</h4>
+      <ToggleGroup
+        className=""
+        type="single"
+        defaultValue={categoriaSelecionada}
+        onValueChange={(value) => {
+          if (value) setCategoriaSelecionada(value);
+        }}
+      >
+        <ToggleGroupItem value="Todos">Todos</ToggleGroupItem>
+        <ToggleGroupItem value="Casa">Casa</ToggleGroupItem>
+        <ToggleGroupItem value="Apartamento">Apartamento</ToggleGroupItem>
+        <ToggleGroupItem value="Comercial">Comercial</ToggleGroupItem>
       </ToggleGroup>
     </>
   );

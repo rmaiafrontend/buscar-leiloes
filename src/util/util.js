@@ -29,3 +29,10 @@ export function ajustarParaFusoBrasilia(dataHora) {
     hora: horaFormatada,
   };
 }
+
+export function formatString(input) {
+  if (input.length > 30) {
+    return input.substring(0, 33) + "...";
+  }
+  return input;
+}

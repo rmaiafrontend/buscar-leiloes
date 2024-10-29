@@ -10,6 +10,7 @@ export function Home() {
       <Header />
       <ListNews />
       <FilterBar></FilterBar>
+
       <ListLotes></ListLotes>
       <ListFiltros></ListFiltros>
     </>

@@ -1,79 +1,106 @@
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Link, useParams, useNavigate } from "react-router-dom"; // Inclua useNavigate
+import { Search } from "lucide-react";
 import { Separator } from "../../ui/separator";
-import { FiltroLoc } from "../filter-label/filtro-loc";
-import { FiltroData } from "../filter-label/filtro-data";
-import { FiltroValor } from "../filter-label/filtro-valor";
+import { FiltroCidade } from "../filter-label/filtro-cidade";
 import { FiltroCategoria } from "../filter-label/filtro-categoria";
+import { FiltroEstado } from "../filter-label/filtro-estado";
+import { FilterPopover } from "../filter-popover";
 
 export function FilterBar() {
+  const navigate = useNavigate(); // Define o navigate
+  const { estado: estadoURL, cidade: cidadeURL, categoria: categoriaURL } = useParams();
+
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState(categoriaURL || "Todos");
+  const [estadoSelecionado, setEstadoSelecionado] = useState(estadoURL || "Selecione um estado");
+  const [cidadeSelecionada, setCidadeSelecionada] = useState(cidadeURL || "Selecione uma cidade");
+
+  useEffect(() => {
+    setCategoriaSelecionada(categoriaURL || "Todos");
+    setEstadoSelecionado(estadoURL || "Selecione um estado");
+    setCidadeSelecionada(cidadeURL || "Selecione uma cidade");
+  }, [estadoURL, cidadeURL, categoriaURL]);
+
+  const handleResetFilters = () => {
+    // Reseta os filtros para os valores padrão
+    setCategoriaSelecionada("Todos");
+    setEstadoSelecionado("Selecione um estado");
+    setCidadeSelecionada("Selecione uma cidade");
+
+    // Navega para a rota de busca com valores padrão
+    navigate(`/busca`);
+  };
+
   return (
     <>
-      <div className="container ">
-        <div className="w-full max-w-[850px] h-[66px] border-2 rounded-xl shadow-md py-4 pl-4 pr-2 flex justify-between items-center">
-          <Popover>
-            <PopoverTrigger>
-              <div className="flex flex-col justify-start">
-                <p className="font-medium text-[14px] text-left">Onde</p>
-                <span className="text-[12px]">Local do imóvel</span>
-              </div>
-            </PopoverTrigger>
-            <PopoverContent className="mt-5 ml-5 w-auto h-auto">
-              <FiltroLoc />
-            </PopoverContent>
-          </Popover>
+      {/* Modal de filtro para telas maiores*/}
+      <div className="container flex items-center overflow-hidden max-sm:hidden">
+        <div className="w-full max-w-[600px] h-[66px] border-2 rounded-xl shadow-md py-4 pl-4 pr-2 flex justify-between items-center gap-5 ">
+          <FilterPopover label="Estado" value={estadoSelecionado}>
+            <FiltroEstado setEstadoSelecionado={setEstadoSelecionado} estadoSelecionado={estadoSelecionado} />
+          </FilterPopover>
 
           <Separator orientation="vertical" />
 
-          <Popover>
-            <PopoverTrigger>
-              <div className="flex flex-col ">
-                <p className="font-medium text-[14px] text-left">Data do leilão</p>
-                <span className="text-[12px]">Insira a data limite</span>
-              </div>
-            </PopoverTrigger>
-            <PopoverContent className="mt-5  w-auto h-auto">
-              <FiltroData></FiltroData>
-            </PopoverContent>
-          </Popover>
+          <FilterPopover label="Cidade" value={cidadeSelecionada} onTriggerClick={() => {}}>
+            <FiltroCidade setCidadeSelecionada={setCidadeSelecionada} estadoSelecionado={estadoSelecionado} />
+          </FilterPopover>
 
           <Separator orientation="vertical" />
 
-          <Popover>
-            <PopoverTrigger>
-              <div className="flex flex-col ">
-                <p className="font-medium text-[14px] text-left">Lance Inicial</p>
-                <span className="text-[12px] text-left">Acima de</span>
-              </div>
-            </PopoverTrigger>
-            <PopoverContent className="mt-5  w-auto h-auto ">
-              <FiltroValor />
-            </PopoverContent>
-          </Popover>
+          <FilterPopover label="Categoria" value={categoriaSelecionada} onTriggerClick={() => {}}>
+            <FiltroCategoria setCategoriaSelecionada={setCategoriaSelecionada} categoriaSelecionada={categoriaSelecionada} />
+          </FilterPopover>
 
-          <Separator orientation="vertical" />
-
-          <Popover>
-            <PopoverTrigger>
-              <div className="flex flex-col ">
-                <p className="font-medium text-[14px] text-left">Categoria</p>
-                <span className="text-[12px]">Apartamento, Casa, Comercial...</span>
-              </div>
-            </PopoverTrigger>
-            <PopoverContent className="mt-5 w-auto h-auto">
-              <FiltroCategoria />
-            </PopoverContent>
-          </Popover>
-
-          <button className="bg-foreground w-12 h-12 rounded-md flex items-center justify-center">
-            <svg height="21" viewBox="0 0 21 21" width="25" xmlns="http://www.w3.org/2000/svg">
-              <g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="8.5" cy="8.5" r="5" />
-                <path d="m17.571 17.5-5.571-5.5" />
-              </g>
-            </svg>
-          </button>
+          <Link to={`/busca/${estadoSelecionado}/${cidadeSelecionada}/${categoriaSelecionada}/`} className="w-full max-w-12 bg-foreground h-12 rounded-md flex items-center justify-center">
+            <Search color="white" strokeWidth={1} />
+          </Link>
         </div>
+
+        <Button variant="secondary" className="w-18 rounded-md flex items-center justify-center ml-4" onClick={handleResetFilters}>
+          <span className="">Resetar Filtros</span>
+        </Button>
+      </div>
+
+      {/* Modal de filtro para dipositivos móveis */}
+      <div className="container sm:hidden">
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline" className="w-full gap-2">
+              Pesquisa detalhada
+              <Search size={16} strokeWidth={1} />
+            </Button>
+          </DialogTrigger>
+
+          <DialogContent className="container w-[90%] rounded-xl gap-3">
+            <DialogHeader>
+              <DialogTitle className="text-left">Busca Detalhada</DialogTitle>
+              <DialogDescription className="text-left">Todos os campos são opcionais.</DialogDescription>
+            </DialogHeader>
+            <FiltroEstado setEstadoSelecionado={setEstadoSelecionado} estadoSelecionado={estadoSelecionado} />
+
+            <Separator orientation="vertical" />
+
+            <FiltroCidade setCidadeSelecionada={setCidadeSelecionada} estadoSelecionado={estadoSelecionado} />
+
+            <Separator orientation="vertical" />
+
+            <FiltroCategoria setCategoriaSelecionada={setCategoriaSelecionada} categoriaSelecionada={categoriaSelecionada} />
+
+            <DialogFooter className="w-full justify-center items-center">
+              <Link to={`/busca/${estadoSelecionado}/${cidadeSelecionada}/${categoriaSelecionada}/`} className="w-full">
+                <Button type="submit" className="w-full">
+                  Pesquisar
+                </Button>
+              </Link>
+              <Button variant="outline" className="w-full rounded-md flex items-center justify-center border-none shadow-transparent font-normal" onClick={handleResetFilters}>
+                <span className="">Resetar Filtros</span>
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
     </>
   );

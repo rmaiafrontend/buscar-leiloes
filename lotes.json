@@ -1,0 +1,573 @@
+[
+  {
+    "id": 1,
+    "category": "Imóvel",
+    "description": "Lote de terreno em área residencial.",
+    "startBuilding": 150000,
+    "city": "São Paulo",
+    "state": "SP",
+    "region": "Sudeste",
+    "title": "Terreno na Vila Madalena",
+    "occupationStatus": "Desocupado",
+    "address": "Rua dos Inocentes, 123",
+    "closingDate": "2024-10-28T13:09:14.057Z",
+    "registration": "Registro nº 001",
+    "notice": "Aceita propostas.",
+    "auctionImages": [
+      {
+        "id": 1,
+        "allotmentId": 1,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/92e0ae54e9a8fe0d0d032cd7b754756e_1024x768.jpg"
+      },
+      {
+        "id": 2,
+        "allotmentId": 1,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/d349124ec83dc13149a806d100eed9d1_1024x768.jpg"
+      },
+      {
+        "id": 3,
+        "allotmentId": 1,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/b65a106a030adab4d0d66781ee69bdab_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Imóvel",
+    "description": "Apartamento com 2 dormitórios em localização central.",
+    "startBuilding": 300000,
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "region": "Sudeste",
+    "title": "Apartamento na Copacabana",
+    "occupationStatus": "Alugado",
+    "address": "Avenida Atlântica, 456",
+    "closingDate": "2024-10-30T10:00:00.000Z",
+    "registration": "Registro nº 002",
+    "notice": "Venda urgente.",
+    "auctionImages": [
+      {
+        "id": 4,
+        "allotmentId": 2,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      },
+      {
+        "id": 5,
+        "allotmentId": 2,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103476/1e5cd351ca47574442fce9cb74a74c3a_1024x768.jpg"
+      },
+      {
+        "id": 6,
+        "allotmentId": 2,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/eccd8161c440a9ee5e879bab04194851_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Imóvel",
+    "description": "Chácara com 5.000 m² em área rural.",
+    "startBuilding": 200000,
+    "city": "Campinas",
+    "state": "SP",
+    "region": "Sudeste",
+    "title": "Chácara em Sousas",
+    "occupationStatus": "Desocupado",
+    "address": "Estrada da Fazenda, 789",
+    "closingDate": "2024-11-15T15:30:00.000Z",
+    "registration": "Registro nº 003",
+    "notice": "Ideal para lazer.",
+    "auctionImages": [
+      {
+        "id": 7,
+        "allotmentId": 3,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/a662534c24e2ba3ff9c4e96c47c987d4_1024x768.jpg"
+      },
+      {
+        "id": 8,
+        "allotmentId": 3,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/1a3ccd821f84c7b712c9c8eea7d986e8_1024x768.jpg"
+      },
+      {
+        "id": 9,
+        "allotmentId": 3,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/8755928154fca883f976850ae48de961_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Imóvel",
+    "description": "Sala comercial em área nobre.",
+    "startBuilding": 500000,
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "region": "Sudeste",
+    "title": "Sala no Savassi",
+    "occupationStatus": "Desocupado",
+    "address": "Rua Tomaz Gonzaga, 321",
+    "closingDate": "2024-12-05T09:00:00.000Z",
+    "registration": "Registro nº 004",
+    "notice": "Ótima localização.",
+    "auctionImages": [
+      {
+        "id": 10,
+        "allotmentId": 4,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/321d38010b6c64b71b73e7d33ec71829_1024x768.jpg"
+      },
+      {
+        "id": 11,
+        "allotmentId": 4,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/466988e1db39656f5c78e5ed4d43cfe1_1024x768.jpg"
+      },
+      {
+        "id": 12,
+        "allotmentId": 4,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/98ed6fe68a7a3960a312d6a25f22cfee_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Imóvel",
+    "description": "Casa de 3 quartos em bairro tranquilo.",
+    "startBuilding": 400000,
+    "city": "Curitiba",
+    "state": "PR",
+    "region": "Sul",
+    "title": "Casa no Batel",
+    "occupationStatus": "Desocupado",
+    "address": "Rua Marechal Floriano, 654",
+    "closingDate": "2024-12-20T17:45:00.000Z",
+    "registration": "Registro nº 005",
+    "notice": "Pronta para morar.",
+    "auctionImages": [
+      {
+        "id": 13,
+        "allotmentId": 5,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/92e0ae54e9a8fe0d0d032cd7b754756e_1024x768.jpg"
+      },
+      {
+        "id": 14,
+        "allotmentId": 5,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      },
+      {
+        "id": 15,
+        "allotmentId": 5,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/eccd8161c440a9ee5e879bab04194851_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Imóvel",
+    "description": "Lote de terreno em condomínio fechado.",
+    "startBuilding": 250000,
+    "city": "São Paulo",
+    "state": "SP",
+    "region": "Sudeste",
+    "title": "Terreno no Alphaville",
+    "occupationStatus": "Desocupado",
+    "address": "Avenida dos Jardins, 200",
+    "closingDate": "2024-01-10T14:00:00.000Z",
+    "registration": "Registro nº 006",
+    "notice": "Localização privilegiada.",
+    "auctionImages": [
+      {
+        "id": 16,
+        "allotmentId": 6,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/d349124ec83dc13149a806d100eed9d1_1024x768.jpg"
+      },
+      {
+        "id": 17,
+        "allotmentId": 6,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/b65a106a030adab4d0d66781ee69bdab_1024x768.jpg"
+      },
+      {
+        "id": 18,
+        "allotmentId": 6,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Imóvel",
+    "description": "Casa geminada em bairro tranquilo.",
+    "startBuilding": 250000,
+    "city": "São José",
+    "state": "SC",
+    "region": "Sul",
+    "title": "Casa no Centro de São José",
+    "occupationStatus": "Desocupado",
+    "address": "Rua Nova, 200",
+    "closingDate": "2024-07-15T14:00:00.000Z",
+    "registration": "Registro nº 007",
+    "notice": "Ótima oportunidade.",
+    "auctionImages": [
+      {
+        "id": 19,
+        "allotmentId": 7,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/98ed6fe68a7a3960a312d6a25f22cfee_1024x768.jpg"
+      },
+      {
+        "id": 20,
+        "allotmentId": 7,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/a662534c24e2ba3ff9c4e96c47c987d4_1024x768.jpg"
+      },
+      {
+        "id": 21,
+        "allotmentId": 7,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/1a3ccd821f84c7b712c9c8eea7d986e8_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Imóvel",
+    "description": "Apartamento de luxo em área nobre.",
+    "startBuilding": 1200000,
+    "city": "Brasília",
+    "state": "DF",
+    "region": "Centro-Oeste",
+    "title": "Apartamento no Lago Sul",
+    "occupationStatus": "Desocupado",
+    "address": "Avenida das Nações, 100",
+    "closingDate": "2024-08-20T10:00:00.000Z",
+    "registration": "Registro nº 008",
+    "notice": "Vista incrível.",
+    "auctionImages": [
+      {
+        "id": 22,
+        "allotmentId": 8,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/8755928154fca883f976850ae48de961_1024x768.jpg"
+      },
+      {
+        "id": 23,
+        "allotmentId": 8,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/eccd8161c440a9ee5e879bab04194851_1024x768.jpg"
+      },
+      {
+        "id": 24,
+        "allotmentId": 8,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/466988e1db39656f5c78e5ed4d43cfe1_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Imóvel",
+    "description": "Terreno com potencial para construção.",
+    "startBuilding": 500000,
+    "city": "Fortaleza",
+    "state": "CE",
+    "region": "Nordeste",
+    "title": "Terreno na Praia do Futuro",
+    "occupationStatus": "Desocupado",
+    "address": "Avenida Beira Mar, 1500",
+    "closingDate": "2024-09-10T16:00:00.000Z",
+    "registration": "Registro nº 009",
+    "notice": "Localização excelente.",
+    "auctionImages": [
+      {
+        "id": 25,
+        "allotmentId": 9,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/d349124ec83dc13149a806d100eed9d1_1024x768.jpg"
+      },
+      {
+        "id": 26,
+        "allotmentId": 9,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      },
+      {
+        "id": 27,
+        "allotmentId": 9,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/eccd8161c440a9ee5e879bab04194851_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Imóvel",
+    "description": "Casa de veraneio à beira da praia.",
+    "startBuilding": 900000,
+    "city": "Ilhéus",
+    "state": "BA",
+    "region": "Nordeste",
+    "title": "Casa na Praia dos Milionários",
+    "occupationStatus": "Desocupado",
+    "address": "Rua do Sol, 200",
+    "closingDate": "2024-10-01T18:00:00.000Z",
+    "registration": "Registro nº 010",
+    "notice": "Excelente para férias.",
+    "auctionImages": [
+      {
+        "id": 28,
+        "allotmentId": 10,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/1a3ccd821f84c7b712c9c8eea7d986e8_1024x768.jpg"
+      },
+      {
+        "id": 29,
+        "allotmentId": 10,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/a662534c24e2ba3ff9c4e96c47c987d4_1024x768.jpg"
+      },
+      {
+        "id": 30,
+        "allotmentId": 10,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "category": "Imóvel",
+    "description": "Lote em área de expansão urbana.",
+    "startBuilding": 220000,
+    "city": "Rio Verde",
+    "state": "GO",
+    "region": "Centro-Oeste",
+    "title": "Terreno em Rio Verde",
+    "occupationStatus": "Desocupado",
+    "address": "Rua das Flores, 123",
+    "closingDate": "2024-11-12T11:30:00.000Z",
+    "registration": "Registro nº 011",
+    "notice": "Próximo a novo shopping.",
+    "auctionImages": [
+      {
+        "id": 31,
+        "allotmentId": 11,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/92e0ae54e9a8fe0d0d032cd7b754756e_1024x768.jpg"
+      },
+      {
+        "id": 32,
+        "allotmentId": 11,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/d349124ec83dc13149a806d100eed9d1_1024x768.jpg"
+      },
+      {
+        "id": 33,
+        "allotmentId": 11,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/466988e1db39656f5c78e5ed4d43cfe1_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Imóvel",
+    "description": "Casa com vista para o mar.",
+    "startBuilding": 1100000,
+    "city": "Balneário Camboriú",
+    "state": "SC",
+    "region": "Sul",
+    "title": "Casa em Balneário",
+    "occupationStatus": "Desocupado",
+    "address": "Avenida Atlântica, 123",
+    "closingDate": "2024-12-01T14:00:00.000Z",
+    "registration": "Registro nº 012",
+    "notice": "Luxo e conforto.",
+    "auctionImages": [
+      {
+        "id": 34,
+        "allotmentId": 12,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/b65a106a030adab4d0d66781ee69bdab_1024x768.jpg"
+      },
+      {
+        "id": 35,
+        "allotmentId": 12,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      },
+      {
+        "id": 36,
+        "allotmentId": 12,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/321d38010b6c64b71b73e7d33ec71829_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "category": "Imóvel",
+    "description": "Pousada em funcionamento.",
+    "startBuilding": 800000,
+    "city": "Natal",
+    "state": "RN",
+    "region": "Nordeste",
+    "title": "Pousada em Ponta Negra",
+    "occupationStatus": "Em funcionamento",
+    "address": "Rua das Pedras, 456",
+    "closingDate": "2025-01-15T12:00:00.000Z",
+    "registration": "Registro nº 013",
+    "notice": "Negócio em expansão.",
+    "auctionImages": [
+      {
+        "id": 37,
+        "allotmentId": 13,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/98ed6fe68a7a3960a312d6a25f22cfee_1024x768.jpg"
+      },
+      {
+        "id": 38,
+        "allotmentId": 13,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/a662534c24e2ba3ff9c4e96c47c987d4_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "category": "Imóvel",
+    "description": "Conjunto comercial com 5 salas.",
+    "startBuilding": 950000,
+    "city": "São Paulo",
+    "state": "SP",
+    "region": "Sudeste",
+    "title": "Conjunto no Centro",
+    "occupationStatus": "Desocupado",
+    "address": "Rua da Consolação, 789",
+    "closingDate": "2024-11-25T16:30:00.000Z",
+    "registration": "Registro nº 014",
+    "notice": "Ideal para investimento.",
+    "auctionImages": [
+      {
+        "id": 39,
+        "allotmentId": 14,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      },
+      {
+        "id": 40,
+        "allotmentId": 14,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/d349124ec83dc13149a806d100eed9d1_1024x768.jpg"
+      },
+      {
+        "id": 41,
+        "allotmentId": 14,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/321d38010b6c64b71b73e7d33ec71829_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "category": "Imóvel",
+    "description": "Terreno rural com 10 hectares.",
+    "startBuilding": 600000,
+    "city": "Goiânia",
+    "state": "GO",
+    "region": "Centro-Oeste",
+    "title": "Fazenda em Goiás",
+    "occupationStatus": "Desocupado",
+    "address": "Estrada da Fazenda, 123",
+    "closingDate": "2024-09-05T11:00:00.000Z",
+    "registration": "Registro nº 015",
+    "notice": "Ideal para agricultura.",
+    "auctionImages": [
+      {
+        "id": 42,
+        "allotmentId": 15,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/98ed6fe68a7a3960a312d6a25f22cfee_1024x768.jpg"
+      },
+      {
+        "id": 43,
+        "allotmentId": 15,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/eccd8161c440a9ee5e879bab04194851_1024x768.jpg"
+      },
+      {
+        "id": 44,
+        "allotmentId": 15,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103277/1a3ccd821f84c7b712c9c8eea7d986e8_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "category": "Imóvel",
+    "description": "Kitnet em localização central.",
+    "startBuilding": 150000,
+    "city": "Florianópolis",
+    "state": "SC",
+    "region": "Sul",
+    "title": "Kitnet no Centro",
+    "occupationStatus": "Alugado",
+    "address": "Rua Dom Jaime Câmara, 456",
+    "closingDate": "2024-06-25T12:00:00.000Z",
+    "registration": "Registro nº 016",
+    "notice": "Ótima para investimento.",
+    "auctionImages": [
+      {
+        "id": 45,
+        "allotmentId": 16,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      },
+      {
+        "id": 46,
+        "allotmentId": 16,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/d349124ec83dc13149a806d100eed9d1_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "category": "Imóvel",
+    "description": "Sítio em área rural.",
+    "startBuilding": 350000,
+    "city": "Petrópolis",
+    "state": "RJ",
+    "region": "Sudeste",
+    "title": "Sítio na Serra",
+    "occupationStatus": "Desocupado",
+    "address": "Estrada do Sítio, 10",
+    "closingDate": "2024-10-28T13:09:14.057Z",
+    "registration": "Registro nº 017",
+    "notice": "Ótima vista.",
+    "auctionImages": [
+      {
+        "id": 47,
+        "allotmentId": 17,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/92e0ae54e9a8fe0d0d032cd7b754756e_1024x768.jpg"
+      },
+      {
+        "id": 48,
+        "allotmentId": 17,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      },
+      {
+        "id": 49,
+        "allotmentId": 17,
+        "link": "https://cdn1.megaleiloes.com.br/batches/102837/466988e1db39656f5c78e5ed4d43cfe1_1024x768.jpg"
+      },
+      {
+        "id": 50,
+        "allotmentId": 17,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/b65a106a030adab4d0d66781ee69bdab_1024x768.jpg"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "category": "Imóvel",
+    "description": "Terreno em área industrial.",
+    "startBuilding": 350000,
+    "city": "São Bernardo do Campo",
+    "state": "SP",
+    "region": "Sudeste",
+    "title": "Terreno na Cidade Industrial",
+    "occupationStatus": "Desocupado",
+    "address": "Avenida Industrial, 123",
+    "closingDate": "2024-02-20T11:00:00.000Z",
+    "registration": "Registro nº 018",
+    "notice": "Próprio para construção.",
+    "auctionImages": [
+      {
+        "id": 51,
+        "allotmentId": 18,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103451/98ed6fe68a7a3960a312d6a25f22cfee_1024x768.jpg"
+      },
+      {
+        "id": 52,
+        "allotmentId": 18,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      },
+      {
+        "id": 53,
+        "allotmentId": 18,
+        "link": "https://cdn1.megaleiloes.com.br/batches/103902/2870a343d0dfe4131baad7abd3fde6f1_1024x768.jpg"
+      }
+    ]
+  }
+]

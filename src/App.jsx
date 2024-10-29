@@ -12,7 +12,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           {/* Definindo a rota para a página de produto com um parâmetro dinâmico */}
           <Route path="/lote/:id" element={<PaginaLote />} />
-          <Route path="/pesquisa" element={<PaginaBusca />} />
+          <Route path="/busca/:estado?/:cidade?/:categoria?" element={<PaginaBusca />} />
         </Routes>
       </BrowserRouter>
     </>

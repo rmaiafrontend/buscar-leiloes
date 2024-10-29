@@ -17,22 +17,25 @@ export function PaginaLote() {
   const [isLoading, setIsLoading] = useState(true); // Estado para gerenciar o carregamento
 
   useEffect(() => {
+    getLote();
+    async function getLote() {
+      fetch(`https://apipdttechleilao.azurewebsites.net/api/Allotments/ListarLotePorId/${id}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setLote(data); // Armazena os dados no estado
+          setIsLoading(false); // Indica que o carregamento terminou
+        })
+        .catch((error) => {
+          console.error("Erro ao buscar dados:", error);
+          setIsLoading(false); // Mesmo em caso de erro, o carregamento deve parar
+        });
+    }
     // Faz a requisição com o id concatenado na URL
-    fetch(`https://leilaopdttech.azurewebsites.net/api/Allotments/ListarLotesPor${id}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setLote(data); // Armazena os dados no estado
-        setIsLoading(false); // Indica que o carregamento terminou
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar dados:", error);
-        setIsLoading(false); // Mesmo em caso de erro, o carregamento deve parar
-      });
   }, [id]); // Adiciona o id como dependência
 
   return (
@@ -43,7 +46,6 @@ export function PaginaLote() {
           <ChevronLeft strokeWidth={1} size={17} />
           <span className="ml-2">Voltar</span>
         </Button>
-        <GridImage></GridImage>
 
         {isLoading ? (
           <p>Carregando dados...</p> // Exibe mensagem enquanto os dados são carregados
@@ -51,6 +53,7 @@ export function PaginaLote() {
           <>
             {lote && (
               <div>
+                <GridImage images={lote.auctionImages}></GridImage>
                 <div className="flex items-center justify-between w-full p-3">
                   <BreadCrumb></BreadCrumb>
                   <div className="flex items-center gap-5">
