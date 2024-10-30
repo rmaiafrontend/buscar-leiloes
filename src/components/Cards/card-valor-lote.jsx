@@ -9,7 +9,7 @@ export function ValorLote({ lote }) {
   const resultado = ajustarParaFusoBrasilia(lote.closingDate);
   return (
     <>
-      <div className="w-full max-w-[495px] rounded shadow-lg p-6 border max-lg:max-w-full max-lg:mt-5">
+      <div className="w-full max-w-[495px] rounded shadow-lg p-6 border max-lg:max-w-full max-lg:mt-5 ">
         <div className="flex items-center justify-between">
           <div>
             <p className="font-semibold text-[16px]">Lance Inicial</p>

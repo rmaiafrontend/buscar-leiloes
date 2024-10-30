@@ -83,7 +83,7 @@ export function FilterBar() {
 
             <Separator orientation="vertical" />
 
-            <FiltroCidade setCidadeSelecionada={setCidadeSelecionada} estadoSelecionado={estadoSelecionado} />
+            <FiltroCidade setCidadeSelecionada={setCidadeSelecionada} estadoSelecionado={estadoSelecionado} cidadeSelecionada={cidadeSelecionada} />
 
             <Separator orientation="vertical" />
 
