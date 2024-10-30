@@ -3,7 +3,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 export function BreadCrumb() {
   return (
     <>
-      <Breadcrumb>
+      <Breadcrumb className="max-lg:hidden">
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/" className="font-bold">
@@ -16,7 +16,7 @@ export function BreadCrumb() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Casa Caixa em Campina Grande / PB - 1600071 </BreadcrumbPage>
+            <BreadcrumbPage>Casa em Campina Grande</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

@@ -1,8 +1,8 @@
 export function CardFiltro() {
   return (
     <>
-      <div className="min-w-[180px] flex justify-center items-center bg-foreground h-[161px] w-full rounded-xl">
-        <h4 className="text-secondary text-center max-sm:text-base">Imóveis entre 120mil - 220mil</h4>
+      <div className="max-w-60 min-w-60 flex justify-center items-center bg-foreground h-[100px] w-full rounded-xl">
+        <h4 className="text-secondary text-center max-sm:text-base">Entre 120mil - 220mil</h4>
       </div>
     </>
   );

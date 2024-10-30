@@ -68,8 +68,8 @@ export function PaginaLote() {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-start mt-4">
-                  <div className="w-[50%]">
+                <div className="flex justify-between items-start mt-4 max-lg:flex-col">
+                  <div className="w-[50% max-lg:w-full">
                     <div>
                       <h1 className="text-[30px] font-medium">{lote.title}</h1>
                       <p className="text-[18px]">{lote.description}</p>
@@ -77,6 +77,8 @@ export function PaginaLote() {
                         <CircleCheckBig size={18} strokeWidth={1} />
                         <span className="text-[18px]">Imóvel {lote.occupationStatus}</span>
                       </div>
+
+                      <ValorLote lote={lote}></ValorLote>
 
                       <Separator className="my-8"></Separator>
 
@@ -146,9 +148,7 @@ export function PaginaLote() {
                     </div>
                   </div>
 
-                  <div className="w-[40%] flex items-start justify-end">
-                    <ValorLote lote={lote}></ValorLote>
-                  </div>
+                  <div className="w-[40%] flex items-start justify-end">{/* <ValorLote lote={lote}></ValorLote> */}</div>
                 </div>
               </div>
             )}

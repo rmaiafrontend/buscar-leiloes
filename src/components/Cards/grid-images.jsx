@@ -22,9 +22,9 @@ export function GridImage({ images }) {
   return (
     <>
       <div className="mt-6">
-        <div className="w-full h-[488px] flex justify-between items-center gap-2">
+        <div className="w-full h-[488px] flex justify-between items-center gap-2 max-xl:flex-col">
           <div
-            className="w-[60%] h-full bg-no-repeat bg-center bg-cover rounded-l-xl relative"
+            className="w-[60%] h-full bg-no-repeat bg-center bg-cover rounded-l-xl relative max-xl:w-full max-xl:rounded-md"
             style={{
               backgroundImage: `url(${images[0]?.link || image})`,
             }}
@@ -37,27 +37,27 @@ export function GridImage({ images }) {
               MOSTRAR TODAS AS FOTOS
             </Button>
           </div>
-          <div className="w-[40%] h-full grid grid-cols-2 gap-2">
+          <div className="w-[40%] h-full grid grid-cols-2 gap-2 max-xl:w-full max-xl:rounded-md">
             <div
-              className="w-full h-full bg-cover bg-center"
+              className="w-full h-full bg-cover bg-center max-xl:rounded-md"
               style={{
                 backgroundImage: `url(${images[1]?.link || image})`,
               }}
             ></div>
             <div
-              className="w-full h-full rounded-tr-xl bg-cover bg-center"
+              className="w-full h-full rounded-tr-xl bg-cover bg-center max-xl:rounded-md"
               style={{
                 backgroundImage: `url(${images[2]?.link || image})`,
               }}
             ></div>
             <div
-              className="w-full h-full bg-cover bg-center"
+              className="w-full h-full bg-cover bg-center max-xl:rounded-md"
               style={{
                 backgroundImage: `url(${images[3]?.link || image})`,
               }}
             ></div>
             <div
-              className="w-full h-full rounded-br-xl bg-cover bg-center"
+              className="w-full h-full rounded-br-xl bg-cover bg-center max-xl:rounded-md"
               style={{
                 backgroundImage: `url(${images[4]?.link || image})`,
               }}

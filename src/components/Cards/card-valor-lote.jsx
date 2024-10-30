@@ -9,7 +9,7 @@ export function ValorLote({ lote }) {
   const resultado = ajustarParaFusoBrasilia(lote.closingDate);
   return (
     <>
-      <div className="w-full max-w-[495px] rounded shadow-lg p-6 border">
+      <div className="w-full max-w-[495px] rounded shadow-lg p-6 border max-lg:max-w-full max-lg:mt-5">
         <div className="flex items-center justify-between">
           <div>
             <p className="font-semibold text-[16px]">Lance Inicial</p>
@@ -20,15 +20,15 @@ export function ValorLote({ lote }) {
               <span className="font-medium text-[#00FFC2]">48%</span>
             </div>
 
-            <p className="font-semibold text-primary text-[30px]">{formatarParaReal(lote.startBuilding)}</p>
+            <p className="font-semibold text-primary text-[30px] max-lg:text-[20px]">{formatarParaReal(lote.startBuilding)}</p>
           </div>
         </div>
         <Separator className="my-5"></Separator>
 
         <div className="flex items-center justify-between">
           <p className="font-semibold text-[16px]">Data de encerramento</p>
-          <p className="font-medium text-primary text-[18px]">
-            {resultado.data} <span className="text-black">às</span> {resultado.hora}
+          <p className="font-medium text-primary text-[18px] max-lg:text-[16px]">
+            {resultado.data} <span className="text-black max-lg:text-[12px]">às</span> {resultado.hora}
           </p>
         </div>
 
