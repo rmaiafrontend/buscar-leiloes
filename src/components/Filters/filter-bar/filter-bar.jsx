@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Link, useParams, useNavigate } from "react-router-dom"; // Inclua useNavigate
-import { Search } from "lucide-react";
+import { Search, RotateCcw } from "lucide-react";
 import { Separator } from "../../ui/separator";
 import { FiltroCidade } from "../filter-label/filtro-cidade";
 import { FiltroCategoria } from "../filter-label/filtro-categoria";
@@ -66,7 +66,8 @@ export function FilterBar() {
           </Link>
         </div>
 
-        <Button variant="secondary" className="w-18 rounded-md flex items-center justify-center ml-4" onClick={handleResetFilters}>
+        <Button variant="outline" className="mt-2  rounded-md flex items-center justify-center border-none shadow-transparent font-normal gap-2" onClick={handleResetFilters}>
+          <RotateCcw size={16} strokeWidth={1} />
           <span className="">Resetar Filtros</span>
         </Button>
       </div>
@@ -96,11 +97,12 @@ export function FilterBar() {
 
             <FiltroCategoria setCategoriaSelecionada={setCategoriaSelecionada} categoriaSelecionada={categoriaSelecionada} />
 
-            <DialogFooter className="w-full justify-center items-center">
+            <DialogFooter className=" mt-5 w-full justify-center items-center">
               <Button type="submit" className="w-full" onClick={handleSearch}>
                 Pesquisar
               </Button>
-              <Button variant="outline" className="mt-2 w-full rounded-md flex items-center justify-center border-none shadow-transparent font-normal" onClick={handleResetFilters}>
+              <Button variant="outline" className="mt-2 w-full rounded-md flex items-center justify-center border-none shadow-transparent font-normal gap-2" onClick={handleResetFilters}>
+                <RotateCcw size={16} strokeWidth={1} />
                 <span className="">Resetar Filtros</span>
               </Button>
             </DialogFooter>
