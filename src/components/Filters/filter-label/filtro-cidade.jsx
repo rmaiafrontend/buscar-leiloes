@@ -8,32 +8,28 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export function FiltroCidade({ setCidadeSelecionada, estadoSelecionado }) {
-  const [cidades, setCidades] = useState("");
-
+  const [cidades, setCidades] = useState([]); // Altere para um array vazio
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState();
 
   useEffect(() => {
-    if (estadoSelecionado != "Selecione um estado") {
+    if (estadoSelecionado !== "Selecione um estado") {
+      setValue();
       fetchCidades();
     }
   }, [estadoSelecionado]);
 
   async function fetchCidades() {
-    await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSelecionado}/municipios?orderBy=nome`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setCidades(data); // Armazena os dados no estado
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Erro ao buscar dados:", error);
-      });
+    try {
+      const response = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSelecionado}/municipios?orderBy=nome`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setCidades(data); // Armazena os dados no estado
+    } catch (error) {
+      console.error("Erro ao buscar dados:", error);
+    }
   }
 
   return (
@@ -41,23 +37,24 @@ export function FiltroCidade({ setCidadeSelecionada, estadoSelecionado }) {
       <h4 className="mb-5 font-medium max-sm:mb-0">Filtre por cidade</h4>
       <PopoverTrigger asChild>
         <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] justify-between">
-          {value ? cidades.find((cidade) => cidade.value === value)?.label : "Escolha uma cidade"}
+          {value ? cidades.find((cidade) => cidade.nome === value)?.nome : "Selecione uma cidade"}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandInput placeholder="Pesquise a cidade..." />
-          <CommandList>
+          <CommandList style={{ pointerEvents: "all" }}>
             <CommandEmpty>Selecione um estado.</CommandEmpty>
             <CommandGroup>
-              {cidades && cidades.length > 0
+              {cidades.length > 0
                 ? cidades.map((cidade) => (
                     <CommandItem
-                      key={cidade.nome}
-                      value={cidade.id}
+                      key={cidade.id}
+                      value={cidade.nome}
                       onSelect={(currentValue) => {
-                        setCidadeSelecionada(currentValue === value ? "" : currentValue);
+                        setCidadeSelecionada(currentValue);
+                        setValue(currentValue);
                         setOpen(false);
                       }}
                     >

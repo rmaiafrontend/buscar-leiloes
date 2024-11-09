@@ -17,6 +17,8 @@ export function FilterBar() {
   const [estadoSelecionado, setEstadoSelecionado] = useState(estadoURL || "Selecione um estado");
   const [cidadeSelecionada, setCidadeSelecionada] = useState(cidadeURL || "Selecione uma cidade");
 
+  const [open, setOpen] = useState(false);
+
   useEffect(() => {
     setCategoriaSelecionada(categoriaURL || "Todos");
     setEstadoSelecionado(estadoURL || "Selecione um estado");
@@ -33,6 +35,11 @@ export function FilterBar() {
     navigate(`/busca`);
   };
 
+  const handleSearch = () => {
+    navigate(`/busca/${estadoSelecionado}/${cidadeSelecionada}/${categoriaSelecionada}/`);
+    setOpen(false); // Fecha o modal após a navegação
+  };
+
   return (
     <>
       {/* Modal de filtro para telas maiores*/}
@@ -45,7 +52,7 @@ export function FilterBar() {
           <Separator orientation="vertical" />
 
           <FilterPopover label="Cidade" value={cidadeSelecionada} onTriggerClick={() => {}}>
-            <FiltroCidade setCidadeSelecionada={setCidadeSelecionada} estadoSelecionado={estadoSelecionado} />
+            <FiltroCidade setCidadeSelecionada={setCidadeSelecionada} estadoSelecionado={estadoSelecionado} cidadeSelecionada={cidadeSelecionada} />
           </FilterPopover>
 
           <Separator orientation="vertical" />
@@ -66,9 +73,9 @@ export function FilterBar() {
 
       {/* Modal de filtro para dipositivos móveis */}
       <div className="container sm:hidden">
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <Button variant="outline" className="w-full gap-2">
+            <Button variant="outline" className="w-full gap-2" onClick={() => setOpen(true)}>
               Pesquisa detalhada
               <Search size={16} strokeWidth={1} />
             </Button>
@@ -90,12 +97,10 @@ export function FilterBar() {
             <FiltroCategoria setCategoriaSelecionada={setCategoriaSelecionada} categoriaSelecionada={categoriaSelecionada} />
 
             <DialogFooter className="w-full justify-center items-center">
-              <Link to={`/busca/${estadoSelecionado}/${cidadeSelecionada}/${categoriaSelecionada}/`} className="w-full">
-                <Button type="submit" className="w-full">
-                  Pesquisar
-                </Button>
-              </Link>
-              <Button variant="outline" className="w-full rounded-md flex items-center justify-center border-none shadow-transparent font-normal" onClick={handleResetFilters}>
+              <Button type="submit" className="w-full" onClick={handleSearch}>
+                Pesquisar
+              </Button>
+              <Button variant="outline" className="mt-2 w-full rounded-md flex items-center justify-center border-none shadow-transparent font-normal" onClick={handleResetFilters}>
                 <span className="">Resetar Filtros</span>
               </Button>
             </DialogFooter>
