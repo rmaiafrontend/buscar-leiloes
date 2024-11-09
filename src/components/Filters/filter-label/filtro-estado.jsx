@@ -8,7 +8,7 @@ export function FiltroEstado({ setEstadoSelecionado, estadoSelecionado }) {
     <>
       <h4 className="mb-5 font-medium max-sm:mb-0">Filtre por estado</h4>
       <ToggleGroup
-        className="grid gap-2 grid-cols-8 grid-rows-3"
+        className="grid gap-2 grid-cols-5 grid-rows-3"
         type="single"
         value={estadoSelecionado}
         onValueChange={(value) => {

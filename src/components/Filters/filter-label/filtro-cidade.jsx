@@ -57,7 +57,7 @@ export function FiltroCidade({ setCidadeSelecionada, estadoSelecionado }) {
             setValue(selectedCity);
             setCidadeSelecionada(selectedCity);
           }}
-          className="w-full p-2 border rounded-md outline-none"
+          className="mt-3 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 bg-white shadow-sm"
         >
           <option value="" disabled>
             Selecione uma cidade
