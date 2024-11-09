@@ -72,8 +72,8 @@ export function FilterBar() {
       </div>
 
       {/* Modal de filtro para dipositivos móveis */}
-      <div className="container sm:hidden">
-        <Dialog open={open} onOpenChange={setOpen}>
+      <div className="container sm:hidden ">
+        <Dialog open={open} onOpenChange={setOpen} className="w-auto">
           <DialogTrigger asChild>
             <Button variant="outline" className="w-full gap-2" onClick={() => setOpen(true)}>
               Pesquisa detalhada

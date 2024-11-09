@@ -8,16 +8,28 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export function FiltroCidade({ setCidadeSelecionada, estadoSelecionado }) {
-  const [cidades, setCidades] = useState([]); // Altere para um array vazio
+  const [cidades, setCidades] = useState([]);
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (estadoSelecionado !== "Selecione um estado") {
-      setValue();
+      setValue("");
       fetchCidades();
     }
   }, [estadoSelecionado]);
+
+  useEffect(() => {
+    // Verifica o tamanho da tela para ajustar a visibilidade do select
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Tamanho de tela para considerar como "móvel"
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Executa ao carregar para pegar a largura inicial
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   async function fetchCidades() {
     try {
@@ -26,47 +38,73 @@ export function FiltroCidade({ setCidadeSelecionada, estadoSelecionado }) {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      setCidades(data); // Armazena os dados no estado
+      setCidades(data);
     } catch (error) {
       console.error("Erro ao buscar dados:", error);
     }
   }
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <div className="flex flex-col">
       <h4 className="mb-5 font-medium max-sm:mb-0">Filtre por cidade</h4>
-      <PopoverTrigger asChild>
-        <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] justify-between">
-          {value ? cidades.find((cidade) => cidade.nome === value)?.nome : "Selecione uma cidade"}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
-          <CommandInput placeholder="Pesquise a cidade..." />
-          <CommandList style={{ pointerEvents: "all" }}>
-            <CommandEmpty>Selecione um estado.</CommandEmpty>
-            <CommandGroup>
-              {cidades.length > 0
-                ? cidades.map((cidade) => (
-                    <CommandItem
-                      key={cidade.id}
-                      value={cidade.nome}
-                      onSelect={(currentValue) => {
-                        setCidadeSelecionada(currentValue);
-                        setValue(currentValue);
-                        setOpen(false);
-                      }}
-                    >
-                      <Check className={cn("mr-2 h-4 w-4", value === cidade.nome ? "opacity-100" : "opacity-0")} />
-                      {cidade.nome}
-                    </CommandItem>
-                  ))
-                : ""}
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </PopoverContent>
-    </Popover>
+
+      {/* Select para dispositivos móveis */}
+      {isMobile ? (
+        <select
+          value={value}
+          onChange={(e) => {
+            const selectedCity = e.target.value;
+            setValue(selectedCity);
+            setCidadeSelecionada(selectedCity);
+          }}
+          className="w-full p-2 border rounded-md outline-none"
+        >
+          <option value="" disabled>
+            Selecione uma cidade
+          </option>
+          {cidades.map((cidade) => (
+            <option key={cidade.id} value={cidade.nome}>
+              {cidade.nome}
+            </option>
+          ))}
+        </select>
+      ) : (
+        // Mantém o Popover e Command para telas maiores
+        <Popover open={open} onOpenChange={setOpen}>
+          <PopoverTrigger asChild>
+            <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] justify-between">
+              {value ? cidades.find((cidade) => cidade.nome === value)?.nome : "Selecione uma cidade"}
+              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-[200px] p-0">
+            <Command>
+              <CommandInput placeholder="Pesquise a cidade..." />
+              <CommandList style={{ pointerEvents: "all" }} className="overflow-auto">
+                <CommandEmpty>Selecione um estado.</CommandEmpty>
+                <CommandGroup>
+                  {cidades.length > 0
+                    ? cidades.map((cidade) => (
+                        <CommandItem
+                          key={cidade.id}
+                          value={cidade.nome}
+                          onSelect={(currentValue) => {
+                            setCidadeSelecionada(currentValue);
+                            setValue(currentValue);
+                            setOpen(false);
+                          }}
+                        >
+                          <Check className={cn("mr-2 h-4 w-4", value === cidade.nome ? "opacity-100" : "opacity-0")} />
+                          {cidade.nome}
+                        </CommandItem>
+                      ))
+                    : ""}
+                </CommandGroup>
+              </CommandList>
+            </Command>
+          </PopoverContent>
+        </Popover>
+      )}
+    </div>
   );
 }
