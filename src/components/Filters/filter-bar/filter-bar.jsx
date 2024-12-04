@@ -66,7 +66,7 @@ export function FilterBar() {
           </Link>
         </div>
 
-        <Button variant="outline" className="mt-2  rounded-md flex items-center justify-center border-none shadow-transparent font-normal gap-2" onClick={handleResetFilters}>
+        <Button variant="outline" className="ml-3  rounded-md flex items-center justify-center border-none shadow-transparent font-normal gap-2" onClick={handleResetFilters}>
           <RotateCcw size={16} strokeWidth={1} />
           <span className="">Resetar Filtros</span>
         </Button>

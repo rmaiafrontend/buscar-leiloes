@@ -1,8 +1,25 @@
-# React + Vite
+# Projeto Buscar Leilões
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Buscar Leilões** é uma plataforma web desenvolvida para facilitar a busca e visualização de lotes de leilão. A aplicação oferece uma interface intuitiva para explorar lotes disponíveis em leilões, com funcionalidades de filtragem para tornar a experiência do usuário mais eficiente.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Vite**: Ferramenta de build de projetos em JavaScript.
+- **React**: Biblioteca JavaScript para criação de interfaces de usuário.
+- **JavaScript**: Linguagem de programação principal utilizada no projeto.
+- **Tailwind CSS**: Framework de CSS para construção de layouts rápidos e responsivos.
+- **Shadcn-ui**: Biblioteca de componentes de UI para aprimorar a experiência visual da aplicação.
+
+## Funcionalidades
+
+- **Página Inicial**:
+
+  - Exibição de lotes cadastrados.
+  - Filtros para facilitar a visualização de lotes por diferentes critérios.
+
+- **Detalhes do Lote**:
+
+  - Visualização detalhada de cada lote, com todas as informações necessárias, como descrição, imagens, preço inicial e outros dados relevantes.
+
+- **Página de Busca**:
+  - Pesquisa de leilões com filtros avançados, permitindo ao usuário encontrar lotes específicos de acordo com diferentes critérios como categoria, preço, e status.
